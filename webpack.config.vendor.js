@@ -16,7 +16,7 @@ const treeShakableModules = [
 ];
 const nonTreeShakableModules = [
     'bootstrap',
-    'bootstrap/dist/css/bootstrap.css',
+    'bootstrap/scss/bootstrap.scss',
     'es6-promise',
     'es6-shim',
     'event-source-polyfill',
@@ -25,7 +25,11 @@ const nonTreeShakableModules = [
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
 module.exports = (env) => {
-    const extractCSS = new ExtractTextPlugin('vendor.css');
+    const extractSass = new ExtractTextPlugin({
+        filename: "[name].[contenthash].css",
+        disable: process.env.NODE_ENV === "development"
+    });
+
     const isDevBuild = !(env && env.prod);
     const sharedConfig = {
         stats: { modules: false },
@@ -56,12 +60,21 @@ module.exports = (env) => {
         },
         output: { path: path.join(__dirname, 'wwwroot', 'dist') },
         module: {
-            rules: [
-                { test: /\.css(\?|$)/, use: extractCSS.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
-            ]
+            rules: [{
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
+            }]
         },
         plugins: [
-            extractCSS,
+            extractSass,
             new webpack.DllPlugin({
                 path: path.join(__dirname, 'wwwroot', 'dist', '[name]-manifest.json'),
                 name: '[name]_[hash]'
