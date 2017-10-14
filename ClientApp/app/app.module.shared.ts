@@ -47,6 +47,10 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
             { path: 'corals', component: CoralsComponent },
             { path: 'invertebrates', component: InvertebratesComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },
+            { path: 'check-out', component: CheckOutComponent },
+            { path: 'order-success', component: OrderSuccessComponent },
+            { path: 'admin/products', component: AdminProductsComponent },
+            { path: 'admin/orders', component: AdminOrdersComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
