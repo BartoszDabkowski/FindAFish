@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        SideBarComponent
+        SideBarComponent,
+        NavBarComponent
     ],
     imports: [
         CommonModule,
