@@ -20,6 +20,7 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
         OrderSuccessComponent,
         MyOrdersComponent,
         AdminProductsComponent,
-        AdminOrdersComponent
+        AdminOrdersComponent,
+        LoginComponent
     ],
     imports: [
         CommonModule,
@@ -51,6 +53,7 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
             { path: 'invertebrates', component: InvertebratesComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },
             { path: 'check-out', component: CheckOutComponent },
+            { path: 'login', component: LoginComponent },
             { path: 'my/orders', component: MyOrdersComponent },
             { path: 'order-success', component: OrderSuccessComponent },
             { path: 'admin/products', component: AdminProductsComponent },
