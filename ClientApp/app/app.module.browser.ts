@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppModuleShared } from './app.module.shared';
 import { AppComponent } from './components/app/app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -10,8 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     bootstrap: [ AppComponent ],
     imports: [
         BrowserModule,
-        AppModuleShared,
-        NgbModule.forRoot(),
+        AppModuleShared
     ],
     providers: [
         { provide: 'BASE_URL', useFactory: getBaseUrl }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './components/app/app.component';
@@ -50,6 +51,7 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
             { path: 'invertebrates', component: InvertebratesComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },
             { path: 'check-out', component: CheckOutComponent },
+            { path: 'my/orders', component: MyOrdersComponent },
             { path: 'order-success', component: OrderSuccessComponent },
             { path: 'admin/products', component: AdminProductsComponent },
             { path: 'admin/orders', component: AdminOrdersComponent },
