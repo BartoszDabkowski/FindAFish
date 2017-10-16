@@ -5,12 +5,13 @@ import { AppComponent } from './components/app/app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
     bootstrap: [ AppComponent ],
     imports: [
-        NgbModule.forRoot(),
         BrowserModule,
-        AppModuleShared
+        AppModuleShared,
+        NgbModule.forRoot(),
     ],
     providers: [
         { provide: 'BASE_URL', useFactory: getBaseUrl }
