@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
+using IdentityServer4;
 
 namespace FindAFish {
     public static class Config {
@@ -33,7 +34,21 @@ namespace FindAFish {
         };
 
         public static IEnumerable<Client> GetClients(){
-            return new List<Client>();
+            return new List<Client>(){
+                new Client{
+                    ClientName = "FindAFish",
+                    ClientId = "findafishclient",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RedirectUris = new List<string>(){
+                        "https://localhost:44364/signin-oidc"
+                    },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
+                }
+            };
         } 
     }
 }

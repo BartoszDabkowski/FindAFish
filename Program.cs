@@ -20,6 +20,7 @@ namespace FindAFish
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                //.UseUrls("https://localhost:44364")
                 .Build();
     }
 }
