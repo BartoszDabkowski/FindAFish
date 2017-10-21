@@ -21,6 +21,8 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './components/login/login.component';
+import { FishListComponent } from './components/fish/fish.subcomponents/fish-list/fish-list.component';
+import { LivestockThumbnailComponent } from './components/livestock-thumbnail/livestock-thumbnail.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +40,9 @@ import { LoginComponent } from './components/login/login.component';
         MyOrdersComponent,
         AdminProductsComponent,
         AdminOrdersComponent,
-        LoginComponent
+        LoginComponent,
+        FishListComponent,
+        LivestockThumbnailComponent
     ],
     imports: [
         CommonModule,
