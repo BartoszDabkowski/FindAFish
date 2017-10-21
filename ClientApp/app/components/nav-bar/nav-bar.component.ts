@@ -1,3 +1,4 @@
+import { NavigationService } from '../../services/navigation.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  constructor() { }
+  isSideBarShown: boolean;
+  constructor(private data: NavigationService) { }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(s => this.isSideBarShown = s);
   }
 
+  toggleSidebar(){
+    this.data.toggleSidebar(!this.isSideBarShown);
+  }
 }
