@@ -1,4 +1,5 @@
-import { Livestock } from '../../models/livestock';
+import { Fish } from '../../models/fish';
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./livestock-thumbnail.component.css']
 })
 export class LivestockThumbnailComponent implements OnInit {
-  @Input('livestock') livestock : Livestock;
+  @Input('fish') fish : Fish;
 
   constructor() { }
 

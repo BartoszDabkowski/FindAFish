@@ -1,23 +1,20 @@
+import { FishService } from '../../../../services/fish.service';
+import { Fish } from '../../../../models/fish';
 import { Livestock } from '../../../../models/livestock';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'faf-fish-list',
   templateUrl: './fish-list.component.html',
-  styleUrls: ['./fish-list.component.css']
+  styleUrls: ['./fish-list.component.css'],
+  providers: [FishService]
 })
 export class FishListComponent implements OnInit {
-  fishes = [
-    {id: 1, name:"clownfish"},
-    {id: 2, name:"pufferfish"},
-    {id: 3, name:"damselfish"},
-    {id: 4, name:"tang"},
-    {id: 5, name:"gobby"},
-    {id: 6, name:"angelfish"},
-    {id: 7, name:"grouper"},
-    {id: 8, name:"hawkfish"}
-  ];
-  constructor() { }
+  fishes: Fish[];
+  
+  constructor(private service : FishService) { 
+    this.fishes = service.getAllFish();
+  }
 
   ngOnInit() {
   }
