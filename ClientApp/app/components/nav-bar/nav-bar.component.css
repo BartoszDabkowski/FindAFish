@@ -1,3 +1,21 @@
 .dropdown-toggle{
     cursor: pointer;
 }
+
+.btn-custom{
+    background-color: #343a40 ;
+    cursor: pointer;
+    border-radius: 2rem;
+    
+}
+
+.btn-custom:active{
+    background-color: #383E46;
+    -webkit-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear; 
+}
+
+span{
+    color: #fff;
+}
