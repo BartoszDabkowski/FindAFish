@@ -55,7 +55,7 @@ import { FishSingleComponent } from './components/fish/fish.subcomponents/fish-s
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'fish', component: FishComponent },
-            { path: 'fish-single/:id/:species', component: FishSingleComponent },
+            { path: 'fish/:id/:species', component: FishSingleComponent },
             { path: 'corals', component: CoralsComponent },
             { path: 'invertebrates', component: InvertebratesComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },

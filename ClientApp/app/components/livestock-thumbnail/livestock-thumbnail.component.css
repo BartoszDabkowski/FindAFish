@@ -2,3 +2,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.card:hover  {
+    background-color: #f6f6f6;
+    border-color: #dbdbdb;
+    text-decoration-line: none;
+}

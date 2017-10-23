@@ -1,5 +1,5 @@
-<div class="card" [routerLink]="['/fish-single', fish.id, fish.name]">
-  <img class="card-img-top" src="http://via.placeholder.com/400x300.png/09f/fff" alt="livestock">
+<div class="card" [routerLink]="['/fish', fish.id, fish.name]">
+  <img class="card-img-top" src="{{fish.imageUrl}}" alt="livestock">
   <div class="card-body">
     <h4 class="card-title text-center">{{fish.name}}</h4>
   </div>

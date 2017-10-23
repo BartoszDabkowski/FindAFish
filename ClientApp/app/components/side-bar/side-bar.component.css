@@ -1,6 +1,15 @@
-
+.collapse{
+    display: none !important;
+}
+.collapse.show{
+    display: flex !important;
+}
 li .fa {
     margin-left: 10px;
+}
+
+.item-small{
+    font-size: 12px !important;
 }
 
 li.link-active a,
@@ -9,6 +18,8 @@ li.link-active a:focus {
     background-color: #007bff;
     color: white;
 }
+
+
 
 .nav-pills .nav-link {
     border-radius: 0rem;

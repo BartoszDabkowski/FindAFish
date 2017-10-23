@@ -1,12 +1,20 @@
+import { Fish } from '../../models/fish';
+import { FishService } from '../../services/fish.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'faf-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.css'],
+  providers: [FishService]
 })
 export class SideBarComponent implements OnInit {
-  constructor() { }
+  public isCollapsed = false;
+  fishes: Fish[];
+  
+  constructor(private service : FishService) { 
+    this.fishes = service.getAllFish();
+  }
 
   ngOnInit() {
   }
