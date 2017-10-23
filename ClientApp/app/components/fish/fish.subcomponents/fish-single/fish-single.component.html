@@ -1,3 +1,12 @@
-<p>
-  {{fish.name}}
-</p>
+
+<div class="row" *ngFor="let fish of fishSubspecies">
+  <div class="col-sm-9">
+      <div class="media">
+          <img class="d-flex align-self-center mr-3" src="{{fish.imageUrl}}" alt="Sample photo">
+          <div class="media-body">
+          <h4>{{fish.name}}</h4>
+          <p>{{fish.description}}</p>
+          </div>
+          </div>
+  </div>
+</div>

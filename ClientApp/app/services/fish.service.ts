@@ -1,5 +1,6 @@
+import { FishSubspecies } from '../models/fishSubspecies';
 import { Fish } from '../models/fish';
-import { Injectable } from '@angular/core';
+import { ANALYZE_FOR_ENTRY_COMPONENTS, Injectable } from '@angular/core';
 
 @Injectable()
 export class FishService {
@@ -41,13 +42,46 @@ export class FishService {
     {"id":34, "name":"Wrasse", "imageUrl":"http://via.placeholder.com/250x200/24C4F9/ffffff" }
 ];
 
+fishSubspeciesList: FishSubspecies[] = [
+  {
+    "speciesId": 1,
+    "id": 1,
+    "name": "Coral Beauty Angelfish",
+    "imageUrl": "http://via.placeholder.com/250x200/24C4F9/ffffff",
+    "description": "description",
+    "careLevel": "Easy",
+    "temperment": "Semi-aggresive",
+    "maxSize": 4,
+    "diet": "Omnivore",
+    "origin": "Fiji, Indonesia, Vanuatu",
+    "family": "Pomacanthidae"
+  },
+  {
+    "speciesId": 1,
+    "id": 2,
+    "name": "Flame Angelfish",
+    "imageUrl": "http://via.placeholder.com/250x200/24C4F9/ffffff",
+    "description": "description",
+    "careLevel": "Moderate",
+    "temperment": "Semi-aggresive",
+    "maxSize": 4,
+    "diet": "Omnivore",
+    "origin": "Cebu, Christmas Island, Marshall Islands, Vanuatu",
+    "family": "Pomacanthidae"
+  }
+];
+
   constructor() { }
 
   getAllFish() : Fish[] {
     return this.fishList;
-}
+  }
 
-getFish(id: number) : Fish {
+  getFish(id: number) : Fish {
     return this.fishList[id - 1];
-}
+  }
+
+  getFishSubspecies(speciesId: number){
+    return this.fishSubspeciesList.filter(f => f.speciesId == speciesId);
+  }
 }

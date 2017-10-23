@@ -1,3 +1,4 @@
+import { FishSubspecies } from '../../../../models/fishSubspecies';
 import { Fish } from '../../../../models/fish';
 import { FishService } from '../../../../services/fish.service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,15 +11,14 @@ import { Component, OnInit } from '@angular/core';
   providers: [FishService]
 })
 export class FishSingleComponent implements OnInit {
-  fish: Fish;
+  fishSubspecies: FishSubspecies[];
+  
   constructor(private route: ActivatedRoute, private service : FishService) { }
 
   ngOnInit() {
-    //this.route.paramMap['id'];
-
     this.route.params.subscribe(params => {
       let id = +params["id"];
-      this.fish = this.service.getFish(id);
+      this.fishSubspecies = this.service.getFishSubspecies(id);
     });
   }
 
