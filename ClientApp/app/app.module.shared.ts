@@ -24,6 +24,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FishListComponent } from './components/fish/fish.subcomponents/fish-list/fish-list.component';
 import { LivestockThumbnailComponent } from './components/livestock-thumbnail/livestock-thumbnail.component';
 import { FishSingleComponent } from './components/fish/fish.subcomponents/fish-single/fish-single.component';
+import { FishSubspeciesComponent } from './components/fish/fish.subcomponents/fish-subspecies/fish-subspecies.component';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { FishSingleComponent } from './components/fish/fish.subcomponents/fish-s
         LoginComponent,
         FishListComponent,
         LivestockThumbnailComponent,
-        FishSingleComponent
+        FishSingleComponent,
+        FishSubspeciesComponent
     ],
     imports: [
         CommonModule,
@@ -55,6 +57,7 @@ import { FishSingleComponent } from './components/fish/fish.subcomponents/fish-s
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'fish', component: FishComponent },
+            { path: 'fish/:speciesId/:species/:id', component: FishSubspeciesComponent },
             { path: 'fish/:id/:species', component: FishSingleComponent },
             { path: 'corals', component: CoralsComponent },
             { path: 'invertebrates', component: InvertebratesComponent },

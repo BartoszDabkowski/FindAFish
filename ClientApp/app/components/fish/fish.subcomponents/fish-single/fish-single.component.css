@@ -1,6 +1,11 @@
 .media{
-    background-color: #f6f6f6;
+    background-color: #fff;
     border: 1px solid #dddddd;
     margin-top: 5px;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.media:hover{
+    background-color: #f6f6f6;
 }

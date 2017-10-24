@@ -81,7 +81,12 @@ fishSubspeciesList: FishSubspecies[] = [
     return this.fishList[id - 1];
   }
 
-  getFishSubspecies(speciesId: number){
-    return this.fishSubspeciesList.filter(f => f.speciesId == speciesId);
+  getAllFishSubspecies(speciesId: number){
+    return this.fishSubspeciesList
+      .filter(f => f.speciesId == speciesId);
+  }
+
+  getFishSubspecies(id: number){
+    return this.fishSubspeciesList[id - 1];
   }
 }

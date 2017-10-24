@@ -29,7 +29,7 @@ li.link-active a:focus {
     position: fixed;
     background-color: lightgray;
     height: 100%;
-    width: calc(16.66% - 10px);
+    width: calc(16.66% - 30px);
     
 }
 

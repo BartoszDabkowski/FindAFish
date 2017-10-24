@@ -18,7 +18,7 @@ export class FishSingleComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       let id = +params["id"];
-      this.fishSubspecies = this.service.getFishSubspecies(id);
+      this.fishSubspecies = this.service.getAllFishSubspecies(id);
     });
   }
 
