@@ -5,12 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fish-single',
-  templateUrl: './fish-single.component.html',
-  styleUrls: ['./fish-single.component.css'],
+  selector: 'faf-fish-species-list',
+  templateUrl: './fish-species-list.component.html',
+  styleUrls: ['./fish-species-list.component.css'],
   providers: [FishService]
 })
-export class FishSingleComponent implements OnInit {
+export class FishSpeciesListComponent implements OnInit {
   fishSubspecies: FishSubspecies[];
   
   constructor(private route: ActivatedRoute, private service : FishService) { }

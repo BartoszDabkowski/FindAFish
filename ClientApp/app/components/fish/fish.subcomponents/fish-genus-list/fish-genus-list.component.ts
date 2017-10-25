@@ -1,15 +1,14 @@
 import { FishService } from '../../../../services/fish.service';
 import { Fish } from '../../../../models/fish';
-import { Livestock } from '../../../../models/livestock';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'faf-fish-list',
-  templateUrl: './fish-list.component.html',
-  styleUrls: ['./fish-list.component.css'],
+  selector: 'faf-fish-genus-list',
+  templateUrl: './fish-genus-list.component.html',
+  styleUrls: ['./fish-genus-list.component.css'],
   providers: [FishService]
 })
-export class FishListComponent implements OnInit {
+export class FishGenusListComponent implements OnInit {
   fishes: Fish[];
   
   constructor(private service : FishService) { 

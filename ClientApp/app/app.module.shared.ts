@@ -1,3 +1,6 @@
+import { FishSpeciesListComponent } from './components/fish/fish.subcomponents/fish-species-list/fish-species-list.component';
+import { FishGenusListComponent } from './components/fish/fish.subcomponents/fish-genus-list/fish-genus-list.component';
+import { FishGenusThumbnailComponent } from './components/fish/fish-genus-thumbnail/fish-genus-thumbnail.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,18 +16,13 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { FishComponent } from './components/fish/fish.component';
-import { CoralsComponent } from './components/corals/corals.component';
-import { InvertebratesComponent } from './components/invertebrates/invertebrates.component';
 import { CheckOutComponent } from './components/check-out/check-out.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './components/login/login.component';
-import { FishListComponent } from './components/fish/fish.subcomponents/fish-list/fish-list.component';
-import { LivestockThumbnailComponent } from './components/livestock-thumbnail/livestock-thumbnail.component';
-import { FishSingleComponent } from './components/fish/fish.subcomponents/fish-single/fish-single.component';
-import { FishSubspeciesComponent } from './components/fish/fish.subcomponents/fish-subspecies/fish-subspecies.component';
+import { FishSpeciesComponent } from './components/fish/fish.subcomponents/fish-species/fish-species.component';
 
 @NgModule({
     declarations: [
@@ -35,18 +33,16 @@ import { FishSubspeciesComponent } from './components/fish/fish.subcomponents/fi
         NavBarComponent,
         ShoppingCartComponent,
         FishComponent,
-        CoralsComponent,
-        InvertebratesComponent,
         CheckOutComponent,
         OrderSuccessComponent,
         MyOrdersComponent,
         AdminProductsComponent,
         AdminOrdersComponent,
         LoginComponent,
-        FishListComponent,
-        LivestockThumbnailComponent,
-        FishSingleComponent,
-        FishSubspeciesComponent
+        FishGenusListComponent,
+        FishGenusThumbnailComponent,
+        FishSpeciesListComponent,
+        FishSpeciesComponent,
     ],
     imports: [
         CommonModule,
@@ -57,10 +53,8 @@ import { FishSubspeciesComponent } from './components/fish/fish.subcomponents/fi
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'fish', component: FishComponent },
-            { path: 'fish/:speciesId/:species/:id', component: FishSubspeciesComponent },
-            { path: 'fish/:id/:species', component: FishSingleComponent },
-            { path: 'corals', component: CoralsComponent },
-            { path: 'invertebrates', component: InvertebratesComponent },
+            { path: 'fish/:speciesId/:species/:id', component: FishSpeciesComponent },
+            { path: 'fish/:id/:species', component: FishSpeciesListComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },
             { path: 'check-out', component: CheckOutComponent },
             { path: 'login', component: LoginComponent },

@@ -4,12 +4,12 @@ import { FishSubspecies } from '../../../../models/fishSubspecies';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-fish-subspecies',
-  templateUrl: './fish-subspecies.component.html',
-  styleUrls: ['./fish-subspecies.component.css'],
+  selector: 'faf-fish-species',
+  templateUrl: './fish-species.component.html',
+  styleUrls: ['./fish-species.component.css'],
   providers: [FishService]
 })
-export class FishSubspeciesComponent implements OnInit {
+export class FishSpeciesComponent implements OnInit {
   fishSubspecies: FishSubspecies;
   constructor(private route: ActivatedRoute, private service: FishService) { }
 
@@ -17,7 +17,7 @@ export class FishSubspeciesComponent implements OnInit {
     this.route.params.subscribe(params => {
       let id = +params["id"]
       let speciesId = +params["speciesId"]
-      console.log(id, speciesId);
+
       this.fishSubspecies = this.service.getFishSubspecies(id);
     });
 

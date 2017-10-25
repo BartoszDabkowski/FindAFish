@@ -2,7 +2,7 @@ import { FishService } from '../../services/fish.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fish',
+  selector: 'faf-fish',
   templateUrl: './fish.component.html',
   styleUrls: ['./fish.component.css'],
   providers: [FishService]
