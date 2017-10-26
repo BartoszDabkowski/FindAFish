@@ -10,7 +10,7 @@ namespace FindAFish.Persistence
         {
         }
 
-        public DbSet<FishGenus> FishGenus{ get; set; }
-        public DbSet<FishSpecies> FishSpecies{ get; set; }
+        public DbSet<Genus> Genus{ get; set; }
+        public DbSet<Species> Species{ get; set; }
     }
 }

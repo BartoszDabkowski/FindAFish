@@ -10,50 +10,52 @@ namespace FindAFish.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "FishGenus",
+                name: "Genus",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Genus = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FishGenus", x => x.Id);
+                    table.PrimaryKey("PK_Genus", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "FishSpecies",
+                name: "Species",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    GenusId = table.Column<int>(type: "int", nullable: false)
+                    CommonName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    GenusId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FishSpecies", x => x.Id);
+                    table.PrimaryKey("PK_Species", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FishSpecies_FishGenus_GenusId",
+                        name: "FK_Species_Genus_GenusId",
                         column: x => x.GenusId,
-                        principalTable: "FishGenus",
+                        principalTable: "Genus",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FishSpecies_GenusId",
-                table: "FishSpecies",
+                name: "IX_Species_GenusId",
+                table: "Species",
                 column: "GenusId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FishSpecies");
+                name: "Species");
 
             migrationBuilder.DropTable(
-                name: "FishGenus");
+                name: "Genus");
         }
     }
 }

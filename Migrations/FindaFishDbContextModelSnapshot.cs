@@ -20,36 +20,46 @@ namespace FindAFish.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FindAFish.Models.FishGenus", b =>
+            modelBuilder.Entity("FindAFish.Models.Genus", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Genus");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
-                    b.ToTable("FishGenus");
+                    b.ToTable("Genus");
                 });
 
-            modelBuilder.Entity("FindAFish.Models.FishSpecies", b =>
+            modelBuilder.Entity("FindAFish.Models.Species", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CommonName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.Property<int>("GenusId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
                     b.HasIndex("GenusId");
 
-                    b.ToTable("FishSpecies");
+                    b.ToTable("Species");
                 });
 
-            modelBuilder.Entity("FindAFish.Models.FishSpecies", b =>
+            modelBuilder.Entity("FindAFish.Models.Species", b =>
                 {
-                    b.HasOne("FindAFish.Models.FishGenus", "Genus")
-                        .WithMany("FishSpecies")
+                    b.HasOne("FindAFish.Models.Genus", "Genus")
+                        .WithMany("Species")
                         .HasForeignKey("GenusId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
