@@ -1,3 +1,4 @@
+using FindAFish.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FindAFish.Persistence
@@ -8,5 +9,8 @@ namespace FindAFish.Persistence
             : base(options)
         {
         }
+
+        public DbSet<FishGenus> FishGenus{ get; set; }
+        public DbSet<FishSpecies> FishSpecies{ get; set; }
     }
 }
