@@ -11,9 +11,10 @@ using System;
 namespace FindAFish.Migrations
 {
     [DbContext(typeof(FindaFishDbContext))]
-    partial class FindaFishDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171026184126_InitialModel")]
+    partial class InitialModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,10 +25,6 @@ namespace FindAFish.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CommonName")
-                        .IsRequired()
-                        .HasMaxLength(50);
 
                     b.Property<string>("Name")
                         .IsRequired()

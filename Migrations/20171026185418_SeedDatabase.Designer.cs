@@ -11,8 +11,8 @@ using System;
 namespace FindAFish.Migrations
 {
     [DbContext(typeof(FindaFishDbContext))]
-    [Migration("20171026173632_InitialModel")]
-    partial class InitialModel
+    [Migration("20171026185418_SeedDatabase")]
+    partial class SeedDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,13 +26,17 @@ namespace FindAFish.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("CommonName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genus");
+                    b.ToTable("Genuses");
                 });
 
             modelBuilder.Entity("FindAFish.Models.Species", b =>

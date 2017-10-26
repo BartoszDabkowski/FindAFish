@@ -11,9 +11,10 @@ using System;
 namespace FindAFish.Migrations
 {
     [DbContext(typeof(FindaFishDbContext))]
-    partial class FindaFishDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171026185317_AddCommonNameToGenusTable")]
+    partial class AddCommonNameToGenusTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

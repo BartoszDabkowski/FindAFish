@@ -10,7 +10,7 @@ namespace FindAFish.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Genus",
+                name: "Genuses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -19,7 +19,7 @@ namespace FindAFish.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Genus", x => x.Id);
+                    table.PrimaryKey("PK_Genuses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,9 +36,9 @@ namespace FindAFish.Migrations
                 {
                     table.PrimaryKey("PK_Species", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Species_Genus_GenusId",
+                        name: "FK_Species_Genuses_GenusId",
                         column: x => x.GenusId,
-                        principalTable: "Genus",
+                        principalTable: "Genuses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -55,7 +55,7 @@ namespace FindAFish.Migrations
                 name: "Species");
 
             migrationBuilder.DropTable(
-                name: "Genus");
+                name: "Genuses");
         }
     }
 }
