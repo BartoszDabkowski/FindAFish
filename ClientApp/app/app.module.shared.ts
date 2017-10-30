@@ -24,6 +24,7 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
 import { LoginComponent } from './components/login/login.component';
 import { FishSpeciesComponent } from './components/fish/fish.subcomponents/fish-species/fish-species.component';
 import { GenusFormComponent } from './components/genus-form/genus-form.component';
+import { SpeciesFormComponent } from './components/species-form/species-form.component';
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import { GenusFormComponent } from './components/genus-form/genus-form.component
         FishSpeciesListComponent,
         FishSpeciesComponent,
         GenusFormComponent,
+        SpeciesFormComponent,
     ],
     imports: [
         CommonModule,
@@ -56,6 +58,7 @@ import { GenusFormComponent } from './components/genus-form/genus-form.component
             { path: 'home', component: HomeComponent },
             { path: 'fish', component: FishComponent },
             { path: 'genus/new', component: GenusFormComponent },
+            { path: 'genus/species/new', component: SpeciesFormComponent },
             { path: 'fish/:speciesId/:species/:id', component: FishSpeciesComponent },
             { path: 'fish/:id/:species', component: FishSpeciesListComponent },
             { path: 'shopping-cart', component: ShoppingCartComponent },
