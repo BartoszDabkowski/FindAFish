@@ -1,3 +1,5 @@
+import { GenusService } from '../../services/genus.service';
+import { SpeciesService } from '../../services/species.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./species-form.component.css']
 })
 export class SpeciesFormComponent implements OnInit {
-
-  constructor() { }
+  genuses : any;
+  constructor(private genusService : GenusService) { }
 
   ngOnInit() {
+    this.genusService.getGenuses().subscribe(genus => {
+      this.genuses = genus;
+      console.log("GENUSES", this.genuses)
+    });  
   }
 
 }

@@ -1,6 +1,3 @@
-import { FishSpeciesListComponent } from './components/fish/fish.subcomponents/fish-species-list/fish-species-list.component';
-import { FishGenusListComponent } from './components/fish/fish.subcomponents/fish-genus-list/fish-genus-list.component';
-import { FishGenusThumbnailComponent } from './components/fish/fish-genus-thumbnail/fish-genus-thumbnail.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -25,6 +22,12 @@ import { LoginComponent } from './components/login/login.component';
 import { FishSpeciesComponent } from './components/fish/fish.subcomponents/fish-species/fish-species.component';
 import { GenusFormComponent } from './components/genus-form/genus-form.component';
 import { SpeciesFormComponent } from './components/species-form/species-form.component';
+import { FishSpeciesListComponent } from './components/fish/fish.subcomponents/fish-species-list/fish-species-list.component';
+import { FishGenusListComponent } from './components/fish/fish.subcomponents/fish-genus-list/fish-genus-list.component';
+import { FishGenusThumbnailComponent } from './components/fish/fish-genus-thumbnail/fish-genus-thumbnail.component';
+
+import { SpeciesService } from './services/species.service';
+import { GenusService } from './services/genus.service';
 
 @NgModule({
     declarations: [
@@ -70,6 +73,10 @@ import { SpeciesFormComponent } from './components/species-form/species-form.com
             { path: 'admin/orders', component: AdminOrdersComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        GenusService,
+        SpeciesService
     ]
 })
 export class AppModuleShared {
