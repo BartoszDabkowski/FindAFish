@@ -7,11 +7,5 @@ namespace FindAFish.Controllers.Resources
         public int Id { get; set; }
         public string Name { get; set; }
         public string CommonName { get; set; }
-        public ICollection<SpeciesResource> Species { get; set; }
-
-        public GenusResource()
-        {
-            Species = new List<SpeciesResource>();
-        }
     }
 }

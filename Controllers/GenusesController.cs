@@ -9,7 +9,7 @@ using FindAFish.Controllers.Resources;
 
 namespace FindAFish.Controllers
 {
-    [Route("/api/Genuses")]
+    [Route("/api/genuses")]
     public class GenusesController : Controller
     {
         private readonly FindaFishDbContext context;
@@ -30,8 +30,14 @@ namespace FindAFish.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateGenus([FromBody] GenusUploadResource genus){
-            return Ok(genus);
+        public async Task<IActionResult> CreateGenus([FromBody] GenusResource genusResource){
+            var genus = mapper.Map<GenusResource, Genus>(genusResource);
+
+            context.Genuses.Add(genus);
+            await context.SaveChangesAsync();
+
+            var result = mapper.Map<Genus, GenusResource>(genus);
+            return Ok(result);
         }
     }
 }

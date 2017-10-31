@@ -8,8 +8,13 @@ namespace FindAFish.Mapping
     {
         public MappingProfile()
         {
+            // Domain to API Respurce
             CreateMap<Genus, GenusResource>();
             CreateMap<Species, SpeciesResource>();
+
+            // API Resource to Domain
+            CreateMap<GenusResource, Genus>();
+            CreateMap<SpeciesResource, Species>();
         }
     }
 }
