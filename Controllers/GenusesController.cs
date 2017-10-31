@@ -9,6 +9,7 @@ using FindAFish.Controllers.Resources;
 
 namespace FindAFish.Controllers
 {
+    [Route("/api/Genuses")]
     public class GenusesController : Controller
     {
         private readonly FindaFishDbContext context;
@@ -20,12 +21,17 @@ namespace FindAFish.Controllers
 
         }
 
-        [HttpGet("/api/Genuses")]
+        [HttpGet]
         public async Task<IEnumerable<GenusResource>> GetGenuses()
         {
             var genus = await context.Genuses.Include(g => g.Species).ToListAsync();
 
             return mapper.Map<List<Genus>, List<GenusResource>>(genus);
+        }
+
+        [HttpPost]
+        public IActionResult CreateGenus([FromBody] GenusUploadResource genus){
+            return Ok(genus);
         }
     }
 }

@@ -8,6 +8,6 @@ export class SpeciesService {
 
     getSpecies() {
         return this.http.get('/api/species')
-        .map(res => res.json());
+            .map(res => res.json());
     }
 }
